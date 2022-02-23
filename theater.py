@@ -26,5 +26,24 @@
 # Credit: This problem comes from "How to Design Programs", 2nd Ed.
 # by Felleisen, Findler, Flatt, and Krishnamurthi.  pg. 60.
 
+# Hunter Wilkins' Solution to the problem
+# I used calculus to maximize the formula
+#
+# Using the values givin in the problem
+# profit(price) = price * (870 - 150 * price) - (180 + 0.04 * (870 - 150 * price))
+# profit'(price) = -300 * price + 876
+#
+# Setting profit'(price) == 0
+# -876 = -300 * price
+# -876 / -300 = price
+# 876 / 300 = price
+# price = $2.92
 
+def compute_best_ticket_price(
+        base_ticket_price=5.0,
+        base_attendence=120,
+        attendence_per_dollar=150,
+        attendee_cost=0.04):
+    return (base_ticket_price * attendence_per_dollar + base_attendence + attendence_per_dollar * attendee_cost) / (2 * attendence_per_dollar)
 
+print(compute_best_ticket_price())
